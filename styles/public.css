@@ -1,0 +1,38 @@
+/* public */
+.bg {
+  background: #fa6f01; }
+
+.theme {
+  color: #fa6f01; }
+
+.w-100 {
+  width: 100%; }
+
+.h-100 {
+  height: 100%; }
+
+.is-require::after {
+  content: '*';
+  display: inline-block;
+  color: red;
+  position: absolute;
+  right: -20upx;
+  top: 0upx; }
+
+.pad-lr {
+  padding: 0 30upx; }
+
+.pad-all {
+  padding: 30upx; }
+
+.flex-ali {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.flex-center {
+  display: flex;
+  align-items: center; }
+
+uni-button:after {
+  border: none !important; }
