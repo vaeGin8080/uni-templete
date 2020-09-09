@@ -1,6 +1,6 @@
 /* public */
 
-$color: #fa6f01;
+$color: #FD474F;
 $base-color: #999999;
 
 .bg {
@@ -47,6 +47,11 @@ $base-color: #999999;
 }
 uni-button:after {
 	border: none !important;
+}
+.banner,.gridew-wrap {
+	.u-border-bottom:after {
+		border-width: 0!important;
+	}
 }
 
 /*  -- flex弹性布局 -- */

@@ -4,12 +4,20 @@
 	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/index/index",
+			"path": "pages/Home/Home",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "Home"
 			}
 		}
-	],
+    ],
+	"tabBar": {
+		"borderStyle": "white",
+		"backgroundColor": "#FDFDFE",
+		"color": "#706753",
+		"selectedColor": "#FE474F",
+		"fontSize": "10px",
+		"list": []
+	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

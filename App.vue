@@ -14,5 +14,4 @@
 
 <style lang="scss">
 @import 'uview-ui/index.scss';
-@import './styles/index.scss';
 </style>
