@@ -6,10 +6,10 @@
 		{
 			"path": "pages/Home/Home",
 			"style": {
-				"navigationBarTitleText": "Home"
+				"navigationBarTitleText": "模板"
 			}
 		}
-    ],
+    ], 
 	"tabBar": {
 		"borderStyle": "white",
 		"backgroundColor": "#FDFDFE",
