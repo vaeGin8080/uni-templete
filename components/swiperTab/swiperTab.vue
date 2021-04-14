@@ -3,7 +3,14 @@
 		<navBar :list="navList" :navList="navList" :tabCurrentIndex="tabCurrentIndex" @tabClick="tabClick"></navBar>
 		<swiper class="swiper" :current="tabCurrentIndex" @change="change" :indicator-dots="false">
 			<swiper-item v-for="(item,index) in navList" :key="index">
-				<scroll-view @scrolltolower="scrolltolower" scroll-y="true" style="height: 100%">
+				<scroll-view
+					@scrolltolower="scrolltolower" 
+					:refresher-enabled="true" 
+					refresher-enabled="true"
+					:refresher-triggered="triggered"
+					@refresherrefresh="onRefresh"
+					scroll-y="true" 
+					style="height: 100%">
 					<view class="pre-wrap w-100 h-100">
 						<slot :item="item"></slot>
 					</view>
@@ -27,7 +34,11 @@ export default {
 		index: {
 			type: Number,
 			default: 0
-		}
+		},
+		triggered: {
+			type: Boolean,
+			default: true
+		},
 	},
 	data() {
 		return {
@@ -35,14 +46,21 @@ export default {
 			tabCurrentIndex: this.index,
 		};
 	},
+	watch: {
+		index(news) {
+			this.tabCurrentIndex = news
+		}
+	},
 	onLoad() {
 	},
 	computed: {
 	},
 	methods: {
 		scrolltolower(e) {
-			console.log('scrolltolower');
 			this.$emit('scrolltolower');
+		},
+		onRefresh() {
+			this.$emit('onRefresh');
 		},
 		tabClick(index) {
 			this.tabCurrentIndex = index;

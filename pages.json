@@ -8,15 +8,29 @@
 			"style": {
 				"navigationBarTitleText": "模板"
 			}
+		}, {
+			"path": "pages/Test/Test",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
 		}
-    ], 
+	],
 	"tabBar": {
 		"borderStyle": "white",
 		"backgroundColor": "#FDFDFE",
 		"color": "#706753",
 		"selectedColor": "#FE474F",
 		"fontSize": "10px",
-		"list": []
+		"list": [{
+			"pagePath": "pages/Home/Home",
+			"text": "首页"
+		},
+		{
+			"pagePath": "pages/Test/Test",
+			"text": "测试"
+		}]
 	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

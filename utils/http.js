@@ -1,12 +1,15 @@
 import Request from './request'
 import store from '../store'
 import storeage from '@/utils/storage.js';
-const test = new Request();
+import {baseUrl} from '@/api/config.js'
 
 const http = new Request();
 http.setConfig((config) => { /* 设置全局配置 */
-	config.baseUrl = ''; /* 根域名不同 */
-	/* uni.getNetworkType({
+	config.baseUrl = baseUrl; /* 根域名不同 */
+	
+	/*
+	网络监听
+	 uni.getNetworkType({
 		success: function(res) {
 			// console.log(res.networkType);
 		}
@@ -14,7 +17,7 @@ http.setConfig((config) => { /* 设置全局配置 */
 	return config
 })
 http.interceptor.request((config, cancel) => { /* 请求之前拦截器 */
-	// let token = store.getters.token
+	let token = store.getters.token
 	config.header = {
 		...config.header
 	}

@@ -1,27 +1,31 @@
 <template>
 	<view>
-		<mescroll-uni :safearea="true" @down="downCallback" @up="upCallback" @init="mescrollInit">
-			<view class="flex-ali u-padding-30">
-				<text>HOME</text>
-			</view>
-		</mescroll-uni>
+		<u-button type="primary" @click="value = true">打开Picker</u-button>
+		<city-select v-model="value" @city-change="cityChange"></city-select>
+		<view class="flex align-center justify-center u-padding-30">
+			{{input}}
+		</view>
 	</view>
 </template>
 
 <script>
-	import {
-		minScroll
-	} from '@/mixins/minScroll.js'
+	import citySelect from '@/components/citySelect/u-city-select.vue'
 	export default {
-		mixins: [minScroll],
+		components: {citySelect},
 		data() {
 			return {
-				list: []
+				list: [],
+				value: '',
+				input: ''
 			};
 		},
 		mounted() {
 		},
 		methods: {
+			cityChange(e) {
+				console.log(e);
+				this.input = e.province.label + '-' + e.city.label + '-' + e.area.label;
+			}
 		}
 	}
 </script>
